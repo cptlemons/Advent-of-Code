@@ -2,7 +2,6 @@ inp_num = 312051
 
 def part1(inp_num):
     distance = 0
-    #determine which ring it is in
     current = 1
     ring = 1
     while True:
