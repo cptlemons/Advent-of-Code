@@ -84,3 +84,23 @@ def main(commands):
 
 print(main(commands))
     
+def yield_main(commands, inp):
+    sounds = []
+    cmd_index = 0
+    registers = initialized_registers(commands)
+    recovered = False
+    while not recovered:
+        func, targets = parse_command(commands[cmd_index])
+        if func == 'jgz':
+            cmd_index += jump(*targets, registers)
+            continue
+        elif len(targets) > 1:
+            two_value(func, *targets, registers)
+        elif func == 'snd':
+            yield sound(*targets, registers, sounds)
+        elif func == 'rcv':
+            registers[targets[0]] = int(inp)
+        else:
+            print("Unrecognized func {}".format(func, targets))
+        cmd_index += 1
+    return recovered
