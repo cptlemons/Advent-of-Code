@@ -80,4 +80,3 @@ def knot_hash(seed):
 
     return ''.join(hexes)
 
-print(knot_hash(''))
