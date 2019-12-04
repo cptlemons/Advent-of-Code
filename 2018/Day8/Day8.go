@@ -15,7 +15,7 @@ func main() {
 }
 
 func getInput() (input []int) {
-	f, err := os.Open("sampleinput.txt")
+	f, err := os.Open("input.txt")
 	if err != nil {
 		log.Fatalf("Unable to open input file: %s", err)
 	}
@@ -75,12 +75,13 @@ func findRootVal(in []int, child, meta int) (out []int, ans int) {
 	var cvalues []int
 	for i := child; i > 0; i-- {
 		var ansadd int
-		in, ansadd = findMetadata(in[2:], in[0], in[1])
+		in, ansadd = findRootVal(in[2:], in[0], in[1])
 		cvalues = append(cvalues, ansadd)
 	}
 	for i := 0; i < meta; i++ {
-		if in[i] < len(cvalues) {
-			ans += cvalues[in[i]]
+		child = in[i] - 1
+		if child < len(cvalues) {
+			ans += cvalues[child]
 		}
 	}
 	return in[meta:], ans
