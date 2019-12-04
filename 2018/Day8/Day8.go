@@ -86,5 +86,3 @@ func findRootVal(in []int, child, meta int) (out []int, ans int) {
 	}
 	return in[meta:], ans
 }
-
-// 33717 too high
