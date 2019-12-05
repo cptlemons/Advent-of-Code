@@ -66,7 +66,6 @@ func part1(input []star) {
 		}
 		input = timeStep(input)
 	}
-	fmt.Println(bestGrid.points)
 	printGrid(bestGrid)
 	fmt.Println("Time taken:", time)
 }
@@ -117,8 +116,6 @@ func getGrid(input []star) grid {
 }
 
 func printGrid(input grid) {
-	fmt.Println("Y size", input.highy-input.lowy)
-	fmt.Println("X size", input.highx-input.lowx)
 	for y := input.lowy; y <= input.highy; y++ {
 		var row []string
 		points := input.points[y]
