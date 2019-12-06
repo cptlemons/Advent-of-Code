@@ -128,7 +128,7 @@ func printGrid(input grid) {
 					points = points[1:]
 				}
 			} else {
-				row = append(row, ".")
+				row = append(row, " ")
 			}
 		}
 		fmt.Println(row)
