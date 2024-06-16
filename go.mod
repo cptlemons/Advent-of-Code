@@ -1,6 +1,6 @@
 module github.com/mattkoler/Advent-of-Code
 
-go 1.17
+go 1.22.4
 
 require (
 	github.com/kr/pretty v0.3.1 // indirect
