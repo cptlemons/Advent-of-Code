@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -72,4 +73,16 @@ func (h *minHeap[T]) Pop() any {
 	x := old[n-1]
 	*h = old[:n-1]
 	return x
+}
+
+func StringSliceToInts(s []string) []int {
+	var nums []int
+	for _, str := range s {
+		num, err := strconv.Atoi(str)
+		if err != nil {
+			log.Fatalf("%s", err)
+		}
+		nums = append(nums, num)
+	}
+	return nums
 }

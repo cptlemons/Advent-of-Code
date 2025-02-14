@@ -8,7 +8,7 @@ import (
 )
 
 func Day01p1() int {
-	lines := utils.InputByLines("day1_input.txt")
+	lines := utils.InputByLines("day01_input.txt")
 
 	var left, right utils.MinHeap[int]
 
@@ -41,7 +41,7 @@ func Day01p1() int {
 }
 
 func Day01p2() int {
-	lines := utils.InputByLines("day1_input.txt")
+	lines := utils.InputByLines("day01_input.txt")
 
 	left, right := make(map[int]int), make(map[int]int)
 
